@@ -1,0 +1,6 @@
+node_modules
+.babelrc
+package-lock.json
+.vscode
+dist
+themeunittestdata.wordpress.xml

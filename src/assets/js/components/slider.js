@@ -1,0 +1,1 @@
+console.log('loggin form slider syn');
