@@ -33,4 +33,20 @@ function function_to_add($query) {
     }
 }
 
-remove_action('pre_get_posts', 'function_to_add', 10, 1);
+// remove_action('pre_get_posts', 'function_to_add', 10, 1);
+
+
+// filters
+
+function no_posts_text($text) {
+    return $text . ' filtered text';
+}
+
+
+add_filter('_themename_no_posts_text', 'no_posts_text');
+
+function fitler_title($title) {
+    return 'Filterd: ' . $title;
+}
+
+add_filter('the_title', 'fitler_title');

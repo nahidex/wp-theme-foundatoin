@@ -21,7 +21,7 @@
     <?php do_action('_themename_after_pagination') ?>
 
 <?php } else { ?>
-    <p> <?php esc_html_e('Sorry, No posts matched your cirteria', '_themename') ?> </p>
+    <p> <?php echo apply_filters('_themename_no_posts_text', esc_html__('Sorry, No posts matched your cirteria', '_themename')); ?> </p>
 <?php } ?>
 
 <?php
