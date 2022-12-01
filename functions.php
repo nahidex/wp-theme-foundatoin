@@ -1,6 +1,7 @@
 <?php 
 require_once "lib/helpers.php";
 require_once "lib/enqueue-assets.php";
+require_once "lib/sidebars.php";
 
 function after_pagination() {
     echo 'after pagination some codes';
