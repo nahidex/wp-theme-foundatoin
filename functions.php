@@ -12,3 +12,25 @@ function after_pagination2() {
 
 add_action('_themename_after_pagination', 'after_pagination', 2);
 add_action('_themename_after_pagination', 'after_pagination2', 1);
+
+
+// add_action('save_post', 'function_to_add', 10, 2); //10 priority default, two arguments
+// function function_to_add($post_id, $post) {
+
+// }
+
+// add_action('wp_head', 'function_to_add');
+
+// function function_to_add() {
+//     echo '<style>body{background-color: red }</style>';
+// }
+
+add_action('pre_get_posts', 'function_to_add', 10, 1);
+
+function function_to_add($query) {
+    if($query->is_main_query()) {
+        $query->set('posts_per_page', 2);
+    }
+}
+
+remove_action('pre_get_posts', 'function_to_add', 10, 1);
