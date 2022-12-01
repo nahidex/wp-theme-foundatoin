@@ -16,7 +16,6 @@ import replace from 'gulp-replace';
 import info from './package.json';
 
 
-
 const sass = gulpSass(dartSass);
 
 const server = browserSync.create();
@@ -121,7 +120,7 @@ export const scripts = () => {
             externals: {
                 jquery: 'jQuery'
             },
-            devtool: !PRODUCTION? 'inline-source-map': false,
+            devtool: !PRODUCTION ? 'inline-source-map' : false,
             mode: 'none'
         }))
         .pipe(gulpif(PRODUCTION, uglify()))
@@ -140,5 +139,3 @@ export const build = gulp.series(clean, gulp.parallel(styles, scripts, images, c
 export const bundle = gulp.series(build, compress);
 
 export default dev;
-
-// N:\laragon\www\wp\wp-content\themes\bettertheme\

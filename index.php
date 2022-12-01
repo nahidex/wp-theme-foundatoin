@@ -17,6 +17,9 @@
 
     <?php } ?>
     <?php the_posts_pagination(); ?>
+    
+    <?php do_action('_themename_after_pagination') ?>
+
 <?php } else { ?>
     <p> <?php esc_html_e('Sorry, No posts matched your cirteria', '_themename') ?> </p>
 <?php } ?>
@@ -28,13 +31,13 @@ printf(_n('One Comment', '%s Comments', $comments, '_themename'), $comments);
 // _x('Post', 'verb', '_themename');
 // _ex('Post', 'boun', '_themename');
 
-$city = 'london';
-echo esc_html__('Your city is ', '_themename') . $city;
+// $city = 'london';
+// echo esc_html__('Your city is ', '_themename') . $city;
 
-printf(
-    // translator: %s is the city name
-    esc_html__('Your city is %s', '_themename'), $city
-);
+// printf(
+//     // translator: %s is the city name
+//     esc_html__('Your city is %s', '_themename'), $city
+// );
 
 
 ?>
