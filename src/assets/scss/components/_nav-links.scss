@@ -1,0 +1,37 @@
+// .menu-all-pages-container {
+//     @extend .collapse;
+//     @extend .navbar-collapse;
+// }
+
+// .menu {
+//     @extend .navbar-nav;
+// }
+
+    .menu-item {
+        @extend .nav-item;
+    a {
+            @extend .nav-link;
+        }
+    }
+
+
+.navbar-nav {
+    > .menu-item-has-children {
+        @extend .dropdown;
+    }
+    .sub-menu {
+        > .menu-item-has-children {
+            @extend .dropdown-submenu;
+        }
+
+        @extend .dropdown-menu;
+         a {
+            color: var(--bs-dropdown-link-color);
+         }
+    }
+}
+
+
+.bt-angle {
+    @extend .dropdown-toggle;
+}

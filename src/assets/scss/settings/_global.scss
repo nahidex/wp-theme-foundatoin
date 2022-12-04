@@ -22,22 +22,24 @@
 @import "../../../../node_modules/bootstrap/scss/mixins";
 @import "../../../../node_modules/bootstrap/scss/root";
 @import "../../../../node_modules/bootstrap/scss/utilities";
+@import "../../../../node_modules/bootstrap/scss/utilities/api";
+@import "../../../../node_modules/bootstrap/scss/helpers";
 
 // 6. Optionally include any other parts as needed // Layout & components
-// @import "../../../../node_modules/bootstrap/scss/root";
+@import "../../../../node_modules/bootstrap/scss/root";
 @import "../../../../node_modules/bootstrap/scss/reboot";
 @import "../../../../node_modules/bootstrap/scss/type";
 // @import "../../../../node_modules/bootstrap/scss/images";
 @import "../../../../node_modules/bootstrap/scss/containers";
 @import "../../../../node_modules/bootstrap/scss/grid";
 // @import "../../../../node_modules/bootstrap/scss/tables";
-// @import "../../../../node_modules/bootstrap/scss/forms";
+@import "../../../../node_modules/bootstrap/scss/forms";
 @import "../../../../node_modules/bootstrap/scss/buttons";
-// @import "../../../../node_modules/bootstrap/scss/transitions";
-// @import "../../../../node_modules/bootstrap/scss/dropdown";
+@import "../../../../node_modules/bootstrap/scss/transitions";
+@import "../../../../node_modules/bootstrap/scss/dropdown";
 // @import "../../../../node_modules/bootstrap/scss/button-group";
-// @import "../../../../node_modules/bootstrap/scss/nav";
-// @import "../../../../node_modules/bootstrap/scss/navbar";
+@import "../../../../node_modules/bootstrap/scss/nav";
+@import "../../../../node_modules/bootstrap/scss/navbar";
 @import "../../../../node_modules/bootstrap/scss/card";
 // @import "../../../../node_modules/bootstrap/scss/accordion";
 // @import "../../../../node_modules/bootstrap/scss/breadcrumb";
@@ -56,5 +58,64 @@
 // @import "../../../../node_modules/bootstrap/scss/offcanvas";
 // @import "../../../../node_modules/bootstrap/scss/placeholders";
 
-@import "../../../../node_modules/bootstrap/scss/helpers";
 
+
+
+
+
+/* ============ desktop view ============ */
+// @media all and (min-width: 992px) {
+// 	.navbar .nav-item .dropdown-menu{ display: none; }
+// 	.navbar .nav-item:hover .nav-link{   }
+// 	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+// 	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+// }	
+/* ============ desktop view .end// ============ */
+
+.navbar .megamenu{ padding: 1rem; }
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+	
+	.navbar .has-megamenu{position:static!important;}
+	.navbar .megamenu{left:0; right:0; width:100%; margin-top:0;  }
+	
+}	
+/* ============ desktop view .end// ============ */
+
+
+/* ============ mobile view ============ */
+@media(max-width: 991px){
+	.navbar.fixed-top .navbar-collapse, .navbar.sticky-top .navbar-collapse{
+		overflow-y: auto;
+	    max-height: 90vh;
+	    margin-top:10px;
+	}
+}
+
+
+
+.dropdown:hover >.dropdown-menu{
+    display: block !important;
+  }
+  .dropdown-submenu:hover > .dropdown-menu{
+    display: block !important;
+      left: 100%;
+      margin-top: -37px;
+  }
+  
+  .dropdown-item{
+    font-size: small; /* 13px */
+  }
+  .dropdown-toggle::after{
+    font-size: var(--font-md);
+    margin-bottom: -2px;
+  }
+  .dropdown-menu li a.active{
+    color:#fff;
+  }
+  
+  .custom-toggle-arrow{
+        font-size: 18px;
+        margin-top: 1px;
+        line-height: 12px;
+  }

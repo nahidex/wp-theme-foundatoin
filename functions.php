@@ -2,6 +2,9 @@
 require_once "lib/helpers.php";
 require_once "lib/enqueue-assets.php";
 require_once "lib/sidebars.php";
+require_once "lib/theme-support.php";
+require_once "lib/navigation.php";
+
 
 function after_pagination() {
     echo 'after pagination some codes';
@@ -30,7 +33,7 @@ add_action('pre_get_posts', 'function_to_add', 10, 1);
 
 function function_to_add($query) {
     if($query->is_main_query()) {
-        $query->set('posts_per_page', 2);
+        $query->set('posts_per_page', 5);
     }
 }
 
@@ -50,4 +53,4 @@ function fitler_title($title) {
     return 'Filterd: ' . $title;
 }
 
-add_filter('the_title', 'fitler_title');
+// add_filter('the_title', 'fitler_title');
